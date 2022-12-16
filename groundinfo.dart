@@ -4,6 +4,7 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:like_button/like_button.dart';
 
 import 'package:flutter_sliding_up_panel/flutter_sliding_up_panel.dart';
 
@@ -41,6 +42,7 @@ class _GroundInfoState extends State<GroundInfo> {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
+    bool isLiked=false;
 
     List icons = [
       Icon(Icons.image),
@@ -112,11 +114,18 @@ class _GroundInfoState extends State<GroundInfo> {
                               Radius.circular(18),
                             ), //BorderRadius.all
                           ),
-                          child: Icon(
-                            FontAwesomeIcons.heart,
-                            color: Colors.purple,
+
+                          child: LikeButton(
+
                             size: 18,
+                            isLiked: isLiked,
+
                           ),
+                          // child: Icon(
+                          //   FontAwesomeIcons.heart,
+                          //   color: Colors.purple,
+                          //   size: 18,
+                          // ),
                         ),
                       ],
                     ),
