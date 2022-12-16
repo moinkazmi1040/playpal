@@ -16,6 +16,7 @@ class GroundInfo extends StatefulWidget {
 
 class _GroundInfoState extends State<GroundInfo> {
   DateTime today = DateTime.now();
+
   void _onDaySelected(DateTime day, DateTime focusedDay) {
     setState(() {
       today = day;
@@ -24,6 +25,7 @@ class _GroundInfoState extends State<GroundInfo> {
 
   final Completer<GoogleMapController> _controller = Completer();
   static LatLng _center = LatLng(33.63237610613854, 73.07100930207619);
+
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
   }
@@ -349,39 +351,374 @@ class _GroundInfoState extends State<GroundInfo> {
                                                 ),
                                               ],
                                             ),
-                                            Container(
-                                              width: width * .30,
-                                              height: height * .07,
-                                              decoration: BoxDecoration(
-                                                color: Color.fromARGB(
-                                                    255, 156, 23, 101),
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'SAT',
-                                                    style: GoogleFonts.syne(
-                                                        color: Colors.white,
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 5,
-                                                  ),
-                                                  Icon(
-                                                    Icons
-                                                        .keyboard_arrow_up_outlined,
-                                                    color: Colors.white,
-                                                    size: 30,
-                                                  ),
-                                                ],
+                                            GestureDetector(
+                                              onTap: () {
+                                                showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      return Dialog(
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                        ),
+                                                        child: Container(
+                                                          width: width * .85,
+                                                          height: height * .55,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                          ),
+                                                          child: Column(
+                                                            children: [
+                                                              SizedBox(
+                                                                height: 25,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                    width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Hours',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                              24,
+                                                                          fontWeight:
+                                                                              FontWeight.w600),
+                                                                    ),
+
+                                                                    GestureDetector(
+
+                                                                      onTap: (){
+
+                                                                        Navigator.pop(context);
+                                                                      },
+                                                                      child: Container(
+
+                                                                          width: width*.15,
+                                                                          height: height*.04,
+                                                                          decoration: BoxDecoration(
+
+                                                                            color: Colors.black26,
+
+                                                                            shape: BoxShape.circle,
+                                                                          ),
+
+                                                                          child: Icon(Icons.close,color: Colors.black38,)),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+
+
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Saturday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Sunday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      'closed',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Monday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Tuesday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Wednesday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Thursday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(height: 30,),
+                                                              Container(
+                                                                width:
+                                                                width * .65,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Friday',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+                                                                    Text(
+                                                                      '8am-6pm',
+                                                                      style: GoogleFonts.syne(
+                                                                          color: Colors
+                                                                              .purple,
+                                                                          fontSize:
+                                                                          18,
+                                                                          fontWeight:
+                                                                          FontWeight.w500),
+                                                                    ),
+
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+
+                                                                height: 30,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      );
+                                                    });
+                                              },
+                                              child: Container(
+                                                width: width * .30,
+                                                height: height * .07,
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromARGB(
+                                                      255, 156, 23, 101),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                child: Row(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'SAT',
+                                                      style: GoogleFonts.syne(
+                                                          color: Colors.white,
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Icon(
+                                                      Icons
+                                                          .keyboard_arrow_up_outlined,
+                                                      color: Colors.white,
+                                                      size: 30,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ],
