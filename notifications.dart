@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/landingpage.dart';
 
 class Notifications extends StatelessWidget {
   @override
@@ -19,39 +20,49 @@ class Notifications extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  width: width * .85,
-                  height: height * .09,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: width * .12,
-                        height: height * .06,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 175, 29, 138),
+                GestureDetector(
 
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(18),
-                          ), //BorderRadius.all
+                  onTap: (){
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LandingPage()),
+                    );
+                  },
+                  child: Container(
+                    width: width * .85,
+                    height: height * .09,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: width * .12,
+                          height: height * .06,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 175, 29, 138),
+
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(18),
+                            ), //BorderRadius.all
+                          ),
+                          child: Icon(
+                            Icons.arrow_back_ios_new_sharp,
+                            color: Colors.white,
+                            size: 18,
+                          ),
                         ),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_sharp,
-                          color: Colors.white,
-                          size: 18,
+                        SizedBox(
+                          width: 15,
                         ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'Notifications',
-                        style: GoogleFonts.nunito(
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 100, 19, 114),
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                        Text(
+                          'Notifications',
+                          style: GoogleFonts.nunito(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 100, 19, 114),
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(

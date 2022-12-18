@@ -261,14 +261,14 @@ class CoachList extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Container(
-                      width: width * .87,
+                      width: width * .89,
                       height: MediaQuery.of(context).size.height,
                       child: GridView.builder(
                           scrollDirection: Axis.vertical,
                           gridDelegate:
                               const SliverGridDelegateWithMaxCrossAxisExtent(
                                   maxCrossAxisExtent: 330,
-                                  childAspectRatio: 1.6 / 2,
+                                  childAspectRatio: 1.65 / 2,
                                   crossAxisSpacing: 0,
                                   mainAxisSpacing: 15),
                           itemCount: 12,

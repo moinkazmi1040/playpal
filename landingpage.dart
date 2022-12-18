@@ -41,7 +41,14 @@ class _LandingPageState extends State<LandingPage> {
             topLeft: Radius.circular(5.0),
             topRight: Radius.circular(5.0),
           ),
-          color: Color.fromARGB(255, 92, 20, 89),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 80, 6, 95),
+              Color.fromARGB(255, 39, 2, 63),
+            ],
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+          ),
         ),
         child: BottomNavigationBar(
           currentIndex: currentIndex,

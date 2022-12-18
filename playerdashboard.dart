@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:playpal/coachlist.dart';
 import 'package:playpal/createteam.dart';
 import 'package:playpal/myfavouritegrounds.dart';
+import 'package:playpal/notifications.dart';
 
 class PlayerDashboard extends StatefulWidget {
   const PlayerDashboard({Key? key}) : super(key: key);
@@ -94,11 +95,22 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                           ),
                         ],
                       ),
-                      Icon(
-                        Icons.notifications,
-                        // FontAwesomeIcons.bell,
-                        color: Colors.white,
-                        size: 25,
+                      GestureDetector(
+
+                        onTap: (){
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  Notifications()),
+                          );
+
+                        },
+                        child: Icon(
+                          Icons.notifications,
+                          // FontAwesomeIcons.bell,
+                          color: Colors.white,
+                          size: 25,
+                        ),
                       ),
                     ],
                   ),
