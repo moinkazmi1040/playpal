@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playpal/CoachDashBoard.dart';
+import 'package:playpal/playerdashboard.dart';
 
 class ContinueAs extends StatefulWidget {
   const ContinueAs({Key? key}) : super(key: key);
@@ -67,13 +68,24 @@ class _ContinueAsState extends State<ContinueAs> {
                   children: [
 
 
-                        Container(
+                        GestureDetector(
 
-                          width: width*.45,
-                          height: height*.30,
-                          child: Image.asset(
-                            'assets/images/pic4.png',
-                            fit: BoxFit.cover,
+                          onTap: (){
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const PlayerDashboard()),
+                            );
+
+                          },
+                          child: Container(
+
+                            width: width*.45,
+                            height: height*.30,
+                            child: Image.asset(
+                              'assets/images/pic4.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
 
