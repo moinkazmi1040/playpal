@@ -22,11 +22,41 @@ class _MeetAndPlayState extends State<MeetAndPlay> {
   ];
 
   List wins = [
-    '4 wins', '12 wins', '1 wins', '23 wins', '2 wins', '6 wins',
-
+    '4 wins',
+    '12 wins',
+    '1 wins',
+    '23 wins',
+    '2 wins',
+    '6 wins',
+  ];
+  List ratings = [
+    '4.5',
+    '4.8',
+    '3.8',
+    '4.6',
+    '4.2',
+    '4',
   ];
 
-  
+  List city = [
+   'Islamabad',
+    'Rawalpindi',
+    'Islamabad',
+    'Islamabad',
+    'Rawalpindi',
+    'Rawalpindi',
+  ];
+
+  List area = [
+  'F-10',
+    'Ayub Park',
+    'F-7',
+    'G-6',
+    'Race Course',
+    'Marir'
+  ];
+
+
 
 
   @override
@@ -72,7 +102,7 @@ class _MeetAndPlayState extends State<MeetAndPlay> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          width: width * .10,
+                          width: width * .12,
                           height: height * .05,
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 58, 6, 88),
@@ -227,258 +257,284 @@ class _MeetAndPlayState extends State<MeetAndPlay> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: width * .90,
-                  height: height * .20,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: Colors.white),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: width * .80,
-                        height: height * .06,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(FontAwesomeIcons.soccerBall),
-                                SizedBox(
-                                  width: 15,
+
+
+
+                Expanded(
+                  child: Container(
+
+                    width: width*.90,
+                    height: MediaQuery.of(context).size.height,
+
+                    child: ListView.builder(
+
+                      itemCount: 6,
+                      itemBuilder: (context, index){
+
+                        return  Container(
+                          width: width * .90,
+                          height: height * .20,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Colors.white),
+
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: width * .80,
+                                height: height * .06,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(FontAwesomeIcons.soccerBall),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Text(
+                                         teams[index],
+                                          style: GoogleFonts.syne(
+                                              color: Colors.purple,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                      width: width * .35,
+                                      height: height * .06,
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Stack(
+                                            clipBehavior: Clip.none,
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 15,
+                                                backgroundColor: Colors.black,
+                                                child: Icon(
+                                                  FontAwesomeIcons.user,
+                                                  color: Colors.white,
+                                                  size: 15,
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 20,
+                                                child: CircleAvatar(
+                                                  radius: 15,
+                                                  backgroundColor: Colors.red,
+                                                  child: Icon(
+                                                    FontAwesomeIcons.user,
+                                                    color: Colors.white,
+                                                    size: 15,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 40,
+                                                child: CircleAvatar(
+                                                  radius: 15,
+                                                  backgroundColor: Colors.purple,
+                                                  child: Icon(
+                                                    FontAwesomeIcons.user,
+                                                    color: Colors.white,
+                                                    size: 15,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 60,
+                                                child: CircleAvatar(
+                                                  radius: 15,
+                                                  backgroundColor: Colors.blue,
+                                                  child: Icon(
+                                                    FontAwesomeIcons.user,
+                                                    color: Colors.white,
+                                                    size: 15,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 80,
+                                                child: CircleAvatar(
+                                                  radius: 15,
+                                                  backgroundColor: Colors.grey,
+                                                  child: Text(
+                                                    '+6',
+                                                    style: GoogleFonts.syne(
+                                                        color: Colors.white,
+                                                        fontSize: 14),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  'Enzuma 11',
-                                  style: GoogleFonts.syne(
-                                      color: Colors.purple,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500),
+                              ),
+                              Container(
+                                width: width * .80,
+                                height: height * .04,
+                                child: Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          FontAwesomeIcons.person,
+                                          color: Colors.purple,
+                                          size: 19,
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Text(
+                                          '10/12',
+                                          style: GoogleFonts.syne(
+                                            color: Colors.purple,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 30,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          FontAwesomeIcons.medal,
+                                          color: Colors.yellow,
+                                          size: 19,
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Text(
+                                          wins[index],
+                                          style: GoogleFonts.syne(
+                                            color: Colors.purple,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 30,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          FontAwesomeIcons.star,
+                                          color: Colors.yellow,
+                                          size: 19,
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Text(
+                                          ratings[index],
+                                          style: GoogleFonts.syne(
+                                            color: Colors.purple,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            Container(
-                              width: width * .35,
-                              height: height * .06,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Stack(
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      CircleAvatar(
-                                        radius: 15,
-                                        backgroundColor: Colors.black,
-                                        child: Icon(
-                                          FontAwesomeIcons.user,
-                                          color: Colors.white,
-                                          size: 15,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: width * .80,
+                                height: height * .07,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          FontAwesomeIcons.locationPin,
+                                          color: Colors.purple,
+                                          size: 19,
                                         ),
-                                      ),
-                                      Positioned(
-                                        left: 20,
-                                        child: CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.red,
-                                          child: Icon(
-                                            FontAwesomeIcons.user,
-                                            color: Colors.white,
-                                            size: 15,
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          city[index],
+                                          style: GoogleFonts.syne(
+                                            color: Colors.purple,
+                                            fontSize: 14,
                                           ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        left: 40,
-                                        child: CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.purple,
-                                          child: Icon(
-                                            FontAwesomeIcons.user,
-                                            color: Colors.white,
-                                            size: 15,
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                         area[index],
+                                          style: GoogleFonts.syne(
+                                            color: Colors.purple,
+                                            fontSize: 14,
                                           ),
                                         ),
+                                      ],
+                                    ),
+                                    Container(
+                                      width: width * .35,
+                                      height: height * .07,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromARGB(255, 192, 19, 106),
+                                        borderRadius: BorderRadius.circular(10),
                                       ),
-                                      Positioned(
-                                        left: 60,
-                                        child: CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.blue,
-                                          child: Icon(
-                                            FontAwesomeIcons.user,
-                                            color: Colors.white,
-                                            size: 15,
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        left: 80,
-                                        child: CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.grey,
-                                          child: Text(
-                                            '+6',
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Challenge',
                                             style: GoogleFonts.syne(
-                                                color: Colors.white,
-                                                fontSize: 14),
+                                                color: Colors.white, fontSize: 14),
                                           ),
-                                        ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Icon(
+                                            FontAwesomeIcons.boltLightning,
+                                            color: Colors.white,
+                                            size: 15,
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: width * .80,
-                        height: height * .04,
-                        child: Row(
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  FontAwesomeIcons.person,
-                                  color: Colors.purple,
-                                  size: 19,
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text(
-                                  '10/12',
-                                  style: GoogleFonts.syne(
-                                    color: Colors.purple,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  FontAwesomeIcons.medal,
-                                  color: Colors.yellow,
-                                  size: 19,
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text(
-                                  '20 wins',
-                                  style: GoogleFonts.syne(
-                                    color: Colors.purple,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  FontAwesomeIcons.star,
-                                  color: Colors.yellow,
-                                  size: 19,
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text(
-                                  '4.5',
-                                  style: GoogleFonts.syne(
-                                    color: Colors.purple,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: width * .80,
-                        height: height * .07,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  FontAwesomeIcons.locationPin,
-                                  color: Colors.purple,
-                                  size: 19,
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text(
-                                  'Islamabad,',
-                                  style: GoogleFonts.syne(
-                                    color: Colors.purple,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  'H-12,',
-                                  style: GoogleFonts.syne(
-                                    color: Colors.purple,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Container(
-                              width: width * .35,
-                              height: height * .07,
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 192, 19, 106),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Challenge',
-                                    style: GoogleFonts.syne(
-                                        color: Colors.white, fontSize: 14),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Icon(
-                                    FontAwesomeIcons.boltLightning,
-                                    color: Colors.white,
-                                    size: 15,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                            ],
+                          ),
+                        );
+
+                      }
+
+
+                    ),
                   ),
                 ),
+
+
+
               ],
             ),
           ),

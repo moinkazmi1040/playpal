@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playpal/CoachDashBoard.dart';
+import 'package:playpal/landingpage.dart';
 import 'package:playpal/playerdashboard.dart';
 
 class ContinueAs extends StatefulWidget {
@@ -74,7 +75,7 @@ class _ContinueAsState extends State<ContinueAs> {
 
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const PlayerDashboard()),
+                              MaterialPageRoute(builder: (context) => const LandingPage()),
                             );
 
                           },
