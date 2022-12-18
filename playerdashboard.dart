@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/coachlist.dart';
+import 'package:playpal/createteam.dart';
+import 'package:playpal/myfavouritegrounds.dart';
 
 class PlayerDashboard extends StatefulWidget {
   const PlayerDashboard({Key? key}) : super(key: key);
@@ -144,34 +147,45 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                       SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: width * .13,
-                            height: height * .06,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                      GestureDetector(
+                        onTap: (){
 
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ), //BorderRadius.all
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MyFavouriteGrounds()),
+                          );
+
+                        },
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: width * .13,
+                              height: height * .06,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ), //BorderRadius.all
+                              ),
+                              child: Icon(
+                                FontAwesomeIcons.heart,
+                                color: Colors.purple,
+                                size: 25,
+                              ),
                             ),
-                            child: Icon(
-                              FontAwesomeIcons.heart,
-                              color: Colors.purple,
-                              size: 25,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Saved',
-                            style: GoogleFonts.syne(
-                                color: Colors.white, fontSize: 14),
-                          )
-                        ],
+                            Text(
+                              'Saved',
+                              style: GoogleFonts.syne(
+                                  color: Colors.white, fontSize: 14),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         width: 15,
@@ -208,66 +222,87 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                       SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: width * .13,
-                            height: height * .06,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                      GestureDetector(
 
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ), //BorderRadius.all
+                        onTap: (){
+
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (context) => const CoachList()),
+                          // );
+
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: width * .13,
+                              height: height * .06,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ), //BorderRadius.all
+                              ),
+                              child: Icon(
+                                FontAwesomeIcons.person,
+                                color: Colors.purple,
+                                size: 28,
+                              ),
                             ),
-                            child: Icon(
-                              FontAwesomeIcons.person,
-                              color: Colors.purple,
-                              size: 28,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'My Coach',
-                            style: GoogleFonts.syne(
-                                color: Colors.white, fontSize: 14),
-                          )
-                        ],
+                            Text(
+                              'My Coach',
+                              style: GoogleFonts.syne(
+                                  color: Colors.white, fontSize: 14),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: width * .13,
-                            height: height * .06,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
+                      GestureDetector(
+                        onTap: (){
 
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ), //BorderRadius.all
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  Create_Team()),
+                          );
+
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: width * .13,
+                              height: height * .06,
+                              decoration: BoxDecoration(
+                                color: Colors.pink,
+
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ), //BorderRadius.all
+                              ),
+                              child: Icon(
+                                FontAwesomeIcons.plus,
+                                color: Colors.white,
+                                size: 28,
+                              ),
                             ),
-                            child: Icon(
-                              FontAwesomeIcons.plus,
-                              color: Colors.white,
-                              size: 28,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'New Team',
-                            style: GoogleFonts.syne(
-                                color: Colors.white, fontSize: 12),
-                          )
-                        ],
+                            Text(
+                              'New Team',
+                              style: GoogleFonts.syne(
+                                  color: Colors.white, fontSize: 12),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         width: 15,
@@ -295,11 +330,23 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                 SizedBox(
                   height: 30,
                 ),
-                Container(
-                  width: width * .88,
-                  height: height * .18,
-                  child:
-                      Image.asset("assets/images/pic3.png", fit: BoxFit.fill),
+                GestureDetector(
+
+                  onTap: ()
+                  {
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CoachList()),
+                    );
+
+                  },
+                  child: Container(
+                    width: width * .88,
+                    height: height * .18,
+                    child:
+                        Image.asset("assets/images/pic3.png", fit: BoxFit.fill),
+                  ),
                 ),
               ],
             ),

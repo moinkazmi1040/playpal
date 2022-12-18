@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:like_button/like_button.dart';
+import 'package:playpal/landingpage.dart';
+import 'package:playpal/playerdashboard.dart';
 
 class MyFavouriteGrounds extends StatefulWidget {
   const MyFavouriteGrounds({Key? key}) : super(key: key);
@@ -74,28 +76,39 @@ class _MyFavouriteGroundsState extends State<MyFavouriteGrounds> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                        width: width * .10,
-                        height: height * .05,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 58, 6, 88),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: Color.fromARGB(171, 131, 27, 79)
-                          //         .withOpacity(0.5),
-                          //     spreadRadius: 2,
-                          //     blurRadius: 2,
-                          //     offset: Offset(0, 2), // changes position of shadow
-                          //   ),
-                          // ],
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ), //BorderRadius.all
-                        ),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_sharp,
-                          color: Colors.white,
-                          size: 18,
+                      GestureDetector(
+                        onTap:(){
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const LandingPage()),
+                          );
+
+                        },
+
+                        child: Container(
+                          width: width * .10,
+                          height: height * .05,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 6, 88),
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //     color: Color.fromARGB(171, 131, 27, 79)
+                            //         .withOpacity(0.5),
+                            //     spreadRadius: 2,
+                            //     blurRadius: 2,
+                            //     offset: Offset(0, 2), // changes position of shadow
+                            //   ),
+                            // ],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ), //BorderRadius.all
+                          ),
+                          child: Icon(
+                            Icons.arrow_back_ios_new_sharp,
+                            color: Colors.white,
+                            size: 18,
+                          ),
                         ),
                       ),
                       SizedBox(

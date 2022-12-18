@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/landingpage.dart';
+import 'package:playpal/playerdashboard.dart';
 
 class Create_Team extends StatelessWidget {
   @override
@@ -37,28 +40,39 @@ class Create_Team extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: width * .10,
-                      height: height * .05,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 58, 6, 88),
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     color: Color.fromARGB(171, 131, 27, 79)
-                        //         .withOpacity(0.5),
-                        //     spreadRadius: 2,
-                        //     blurRadius: 2,
-                        //     offset: Offset(0, 2), // changes position of shadow
-                        //   ),
-                        // ],
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ), //BorderRadius.all
-                      ),
-                      child: Icon(
-                        Icons.arrow_back_ios_new_sharp,
-                        color: Colors.white,
-                        size: 18,
+                    GestureDetector(
+                      onTap:(){
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LandingPage()),
+                        );
+
+                      },
+
+                      child: Container(
+                        width: width * .10,
+                        height: height * .05,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 58, 6, 88),
+                          // boxShadow: [
+                          //   BoxShadow(
+                          //     color: Color.fromARGB(171, 131, 27, 79)
+                          //         .withOpacity(0.5),
+                          //     spreadRadius: 2,
+                          //     blurRadius: 2,
+                          //     offset: Offset(0, 2), // changes position of shadow
+                          //   ),
+                          // ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ), //BorderRadius.all
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_sharp,
+                          color: Colors.white,
+                          size: 18,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -66,7 +80,8 @@ class Create_Team extends StatelessWidget {
                     ),
                     Text(
                       'Create Your Team',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: GoogleFonts.syne(color: Colors.white, fontSize: 16)
+                      ,
                     ),
                   ],
                 ),
@@ -112,7 +127,7 @@ class Create_Team extends StatelessWidget {
                           ),
                           Text(
                             'Football',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                            style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                           )
                         ],
                       ),
@@ -148,7 +163,7 @@ class Create_Team extends StatelessWidget {
                           ),
                           Text(
                             'Cricket',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                            style:GoogleFonts.syne(color: Colors.white, fontSize: 16),
                           )
                         ],
                       ),
@@ -165,7 +180,7 @@ class Create_Team extends StatelessWidget {
                   children: [
                     Text(
                       'Team Name',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                     ),
                   ],
                 ),
@@ -189,7 +204,7 @@ class Create_Team extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       hintStyle: TextStyle(color: Colors.white),
                       hintText: "Inzuma 11",
-                      labelStyle: TextStyle(fontSize: 12)),
+                      labelStyle: GoogleFonts.syne(color: Colors.white, fontSize: 16)),
                 ),
               ),
               Container(
@@ -198,7 +213,7 @@ class Create_Team extends StatelessWidget {
                   children: [
                     Text(
                       'Team Location',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style:GoogleFonts.syne(color: Colors.white, fontSize: 16),
                     ),
                   ],
                 ),
@@ -222,7 +237,7 @@ class Create_Team extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       hintStyle: TextStyle(color: Colors.white),
                       hintText: "Pakistan Town etc...",
-                      labelStyle: TextStyle(fontSize: 12)),
+                      labelStyle:GoogleFonts.syne(color: Colors.white, fontSize: 16)),
                 ),
               ),
               SizedBox(
@@ -234,7 +249,7 @@ class Create_Team extends StatelessWidget {
                   children: [
                     Text(
                       'Age Category Under...',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                     ),
                   ],
                 ),
@@ -259,7 +274,7 @@ class Create_Team extends StatelessWidget {
                     child: Center(
                       child: Text(
                         ages[index],
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ),
@@ -274,7 +289,7 @@ class Create_Team extends StatelessWidget {
                   children: [
                     Text(
                       'Description',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                     ),
                   ],
                 ),
@@ -302,7 +317,7 @@ class Create_Team extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       hintStyle: TextStyle(color: Colors.white),
                       hintText: "Pakistan Town etc...",
-                      labelStyle: TextStyle(fontSize: 12)),
+                      labelStyle:GoogleFonts.syne(color: Colors.white, fontSize: 16)),
                 ),
               ),
               SizedBox(
@@ -322,7 +337,7 @@ class Create_Team extends StatelessWidget {
                     children: [
                       Text(
                         'Create',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        style: GoogleFonts.syne(color: Colors.white, fontSize: 16),
                       ),
                       SizedBox(
                         width: 15,
@@ -335,7 +350,7 @@ class Create_Team extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

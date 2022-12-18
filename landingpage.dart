@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/CoachDashBoard.dart';
+import 'package:playpal/playerdashboard.dart';
 import 'inbox.dart';
 import 'payments.dart';
 
@@ -17,10 +19,11 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   int currentIndex = 0;
   final screens = [
-    HomePage(),
+    PlayerDashboard(),
     Inbox(),
     Payments(),
     Profile(),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -35,8 +38,8 @@ class _LandingPageState extends State<LandingPage> {
         height: height * .10,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
+            topLeft: Radius.circular(5.0),
+            topRight: Radius.circular(5.0),
           ),
           color: Color.fromARGB(255, 92, 20, 89),
         ),
@@ -44,7 +47,7 @@ class _LandingPageState extends State<LandingPage> {
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.purple,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.white,
           backgroundColor: Colors.transparent,
           // backgroundColor: Color.fromARGB(255, 92, 20, 89),
           iconSize: 22,
