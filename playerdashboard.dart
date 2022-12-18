@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/GroundList.dart';
 import 'package:playpal/coachlist.dart';
 import 'package:playpal/createteam.dart';
+import 'package:playpal/groundinfo.dart';
 import 'package:playpal/myfavouritegrounds.dart';
 import 'package:playpal/notifications.dart';
+import 'meetandplay.dart';
 
 class PlayerDashboard extends StatefulWidget {
   const PlayerDashboard({Key? key}) : super(key: key);
@@ -327,17 +330,40 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
-                  child: Container(
-                    width: width * 90,
-                    height: height * .28,
-                    child:
-                        Image.asset("assets/images/pic2.png", fit: BoxFit.fill),
+                  child: GestureDetector(
+
+    onTap: () {
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const MeetAndPlay()),
+      );
+
+
+    },
+    child: Container(
+                      width: width * 90,
+                      height: height * .28,
+                      child:
+                          Image.asset("assets/images/pic2.png", fit: BoxFit.fill),
+                    ),
                   ),
                 ),
-                Container(
-                  width: width * .88,
-                  height: height * .18,
-                  child: Image.asset("assets/images/pic.png", fit: BoxFit.fill),
+                GestureDetector(
+                  onTap: ()
+                  {
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const GroundList()),
+                    );
+
+                  },
+                  child: Container(
+                    width: width * .88,
+                    height: height * .18,
+                    child: Image.asset("assets/images/pic.png", fit: BoxFit.fill),
+                  ),
                 ),
                 SizedBox(
                   height: 30,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playpal/landingpage.dart';
 import 'dart:async';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -72,28 +73,40 @@ class _GroundInfoState extends State<GroundInfo> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          width: width * .12,
-                          height: height * .06,
-                          decoration: BoxDecoration(
-                            color: Colors.purple,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 4,
-                                blurRadius: 7,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(18),
-                            ), //BorderRadius.all
-                          ),
-                          child: Icon(
-                            Icons.arrow_back_ios_new_sharp,
-                            color: Colors.white,
-                            size: 18,
+                        GestureDetector(
+
+                          onTap: ()
+                          {
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  LandingPage()),
+                            );
+
+                          },
+                          child: Container(
+                            width: width * .12,
+                            height: height * .06,
+                            decoration: BoxDecoration(
+                              color: Colors.purple,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 4,
+                                  blurRadius: 7,
+                                  offset:
+                                      Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(18),
+                              ), //BorderRadius.all
+                            ),
+                            child: Icon(
+                              Icons.arrow_back_ios_new_sharp,
+                              color: Colors.white,
+                              size: 18,
+                            ),
                           ),
                         ),
                         Container(
