@@ -39,17 +39,7 @@ class _TeamsJoinedState extends State<TeamsJoined> {
     'Rawalpindi',
   ];
 
-  List area = [
-    'F-10',
-    'Ayub Park',
-    'F-7',
-    'G-6',
-    'Race Course',
-    'Marir'
-  ];
-
-
-
+  List area = ['F-10', 'Ayub Park', 'F-7', 'G-6', 'Race Course', 'Marir'];
 
   @override
   Widget build(BuildContext context) {
@@ -132,23 +122,26 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                             ),
                           ],
                         ),
-                        
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            
-                            Icon(FontAwesomeIcons.users,color: Colors.white,size: 18,),
+                            Icon(
+                              FontAwesomeIcons.users,
+                              color: Colors.white,
+                              size: 18,
+                            ),
                             SizedBox(
-
                               height: 5,
                             ),
-                            Text('Requests',style: GoogleFonts.syne(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600),)
+                            Text(
+                              'Requests',
+                              style: GoogleFonts.syne(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600),
+                            )
                           ],
-                          
                         ),
                       ],
                     ),
@@ -158,51 +151,56 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                   height: 20,
                 ),
                 Container(
-                  width: width * .95,
+                  width: width * .90,
                   height: height * .08,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                      color: Colors.white,
                       // color: Color.fromARGB(255, 192, 19, 106).withOpacity(0.5),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       )),
                   child: Row(
 
+                    crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: [
 
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Container(
+                      Row(
 
-                          width: width*.40,
-                          height: height*.06,
-                          decoration: BoxDecoration(
-
-                              color: Color.fromARGB(255, 192, 19, 106),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              )),
-
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text('Joined Teams',style: GoogleFonts.syne(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600),),
-                            ],
+                        children: [
+                          SizedBox(
+                            width: 20,
                           ),
-                        ),
-                      ],
-                    ),
-                      SizedBox(
-                        width: 40,
+                          Container(
+
+                            width: width*.40,
+                            height: height*.06,
+                            decoration: BoxDecoration(
+
+                                color: Color.fromARGB(255, 192, 19, 106),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20),
+                                )),
+
+
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text('Joined Teams',style: GoogleFonts.syne(
+                                  color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600),),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
+SizedBox(
+
+  width: 40,
+
+),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -212,21 +210,28 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                           );
                         },
 
+                        child: Container(
 
-                        child: Text('My  Teams',style: GoogleFonts.syne(
-                            color: Color.fromARGB(255, 192, 19, 106),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+
+                              Text('My  Teams',style: GoogleFonts.syne(
+                                  color: Color.fromARGB(255, 192, 19, 106),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600),),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
+
                 SizedBox(
                   height: 10,
                 ),
-
-
-
                 SizedBox(
                   height: 30,
                 ),
@@ -240,21 +245,14 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                 SizedBox(
                   height: 10,
                 ),
-
-
-
                 Expanded(
                   child: Container(
-
-                    width: width*.90,
+                    width: width * .90,
                     height: MediaQuery.of(context).size.height,
-
                     child: ListView.builder(
-
                         itemCount: 3,
-                        itemBuilder: (context, index){
-
-                          return  Container(
+                        itemBuilder: (context, index) {
+                          return Container(
                             width: width * .90,
                             height: height * .20,
                             decoration: BoxDecoration(
@@ -262,7 +260,6 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                   Radius.circular(10),
                                 ),
                                 color: Colors.white),
-
                             margin: EdgeInsets.only(bottom: 20),
                             child: Column(
                               children: <Widget>[
@@ -273,7 +270,8 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                   width: width * .80,
                                   height: height * .06,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
@@ -290,7 +288,6 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                           ),
                                         ],
                                       ),
-
                                     ],
                                   ),
                                 ),
@@ -343,7 +340,6 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                       SizedBox(
                                         width: 30,
                                       ),
-
                                     ],
                                   ),
                                 ),
@@ -354,7 +350,8 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                   width: width * .80,
                                   height: height * .07,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
@@ -421,7 +418,8 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                                   left: 40,
                                                   child: CircleAvatar(
                                                     radius: 15,
-                                                    backgroundColor: Colors.purple,
+                                                    backgroundColor:
+                                                        Colors.purple,
                                                     child: Icon(
                                                       FontAwesomeIcons.user,
                                                       color: Colors.white,
@@ -433,7 +431,8 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                                   left: 60,
                                                   child: CircleAvatar(
                                                     radius: 15,
-                                                    backgroundColor: Colors.blue,
+                                                    backgroundColor:
+                                                        Colors.blue,
                                                     child: Icon(
                                                       FontAwesomeIcons.user,
                                                       color: Colors.white,
@@ -445,7 +444,8 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                                                   left: 80,
                                                   child: CircleAvatar(
                                                     radius: 15,
-                                                    backgroundColor: Colors.grey,
+                                                    backgroundColor:
+                                                        Colors.grey,
                                                     child: Text(
                                                       '+6',
                                                       style: GoogleFonts.syne(
@@ -465,16 +465,9 @@ class _TeamsJoinedState extends State<TeamsJoined> {
                               ],
                             ),
                           );
-
-                        }
-
-
-                    ),
+                        }),
                   ),
                 ),
-
-
-
               ],
             ),
           ),

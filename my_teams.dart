@@ -158,7 +158,7 @@ class _MyTeamsState extends State<MyTeams> {
                   height: 20,
                 ),
                 Container(
-                  width: width * .95,
+                  width: width * .90,
                   height: height * .08,
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -168,10 +168,12 @@ class _MyTeamsState extends State<MyTeams> {
                       )),
                   child: Row(
 
+                    crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: [
 
                       Row(
+
                         children: [
                           SizedBox(
                             width: 20,
@@ -207,9 +209,7 @@ class _MyTeamsState extends State<MyTeams> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
+
                       Container(
                         width: width*.40,
                         height: height*.06,
