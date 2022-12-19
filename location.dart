@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'meetandplay.dart';
 
 class Location extends StatefulWidget {
   const Location({super.key});
@@ -33,20 +34,30 @@ class _LocationState extends State<Location> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: width * .12,
-                      height: height * .06,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 175, 29, 138),
+                    GestureDetector(
 
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(18),
-                        ), //BorderRadius.all
-                      ),
-                      child: Icon(
-                        Icons.arrow_back_ios_new_sharp,
-                        color: Colors.white,
-                        size: 18,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MeetAndPlay()),
+                        );
+                      },
+                      child: Container(
+                        width: width * .12,
+                        height: height * .06,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 175, 29, 138),
+
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(18),
+                          ), //BorderRadius.all
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_sharp,
+                          color: Colors.white,
+                          size: 18,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -245,8 +256,8 @@ class _LocationState extends State<Location> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Create',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        'Confirm Location',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                       SizedBox(
                         width: 15,

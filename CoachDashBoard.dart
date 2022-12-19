@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playpal/coachgig.dart';
 
 class CoachDashboard extends StatefulWidget {
   const CoachDashboard({Key? key}) : super(key: key);
@@ -100,29 +101,40 @@ class _CoachDashboardState extends State<CoachDashboard> {
                                   fontWeight: FontWeight.w500)),
                         ],
                       ),
-                      Container(
-                        width: width * .12,
-                        height: height * .05,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          // color: Color.fromARGB(255, 58, 6, 88),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: Color.fromARGB(171, 131, 27, 79)
-                          //         .withOpacity(0.5),
-                          //     spreadRadius: 2,
-                          //     blurRadius: 2,
-                          //     offset: Offset(0, 2), // changes position of shadow
-                          //   ),
-                          // ],
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ), //BorderRadius.all
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.user,
-                          color: Colors.black,
-                          size: 18,
+                      GestureDetector(
+                        onTap: (){
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const CoachGig()),
+                          );
+
+                        },
+
+                        child: Container(
+                          width: width * .12,
+                          height: height * .05,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            // color: Color.fromARGB(255, 58, 6, 88),
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //     color: Color.fromARGB(171, 131, 27, 79)
+                            //         .withOpacity(0.5),
+                            //     spreadRadius: 2,
+                            //     blurRadius: 2,
+                            //     offset: Offset(0, 2), // changes position of shadow
+                            //   ),
+                            // ],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ), //BorderRadius.all
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.user,
+                            color: Colors.black,
+                            size: 18,
+                          ),
                         ),
                       ),
                     ],

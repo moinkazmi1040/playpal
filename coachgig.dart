@@ -78,7 +78,7 @@ class _CoachGigState extends State<CoachGig> {
                               width: 15,
                             ),
                             Text(
-                              'Gig Edit',
+                              'My Gig',
                               style: GoogleFonts.syne(
                                   color: Colors.white,
                                   fontSize: 18,

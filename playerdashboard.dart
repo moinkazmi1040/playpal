@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:playpal/GroundList.dart';
-import 'package:playpal/coachlist.dart';
-import 'package:playpal/createteam.dart';
-import 'package:playpal/groundinfo.dart';
-import 'package:playpal/myfavouritegrounds.dart';
-import 'package:playpal/notifications.dart';
+import 'GroundList.dart';
+import 'coachlist.dart';
+import 'createteam.dart';
+import 'groundinfo.dart';
+import 'myfavouritegrounds.dart';
+import 'notifications.dart';
 import 'meetandplay.dart';
+import 'teams_joined.dart';
 
 class PlayerDashboard extends StatefulWidget {
   const PlayerDashboard({Key? key}) : super(key: key);
@@ -205,34 +206,45 @@ class _PlayerDashboardState extends State<PlayerDashboard> {
                       SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: width * .13,
-                            height: height * .06,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
+                      GestureDetector(
 
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ), //BorderRadius.all
+                        onTap: (){
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const TeamsJoined()),
+                          );
+
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: width * .13,
+                              height: height * .06,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ), //BorderRadius.all
+                              ),
+                              child: Icon(
+                                FontAwesomeIcons.users,
+                                color: Colors.purple,
+                                size: 25,
+                              ),
                             ),
-                            child: Icon(
-                              FontAwesomeIcons.users,
-                              color: Colors.purple,
-                              size: 25,
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Teams',
-                            style: GoogleFonts.syne(
-                                color: Colors.white, fontSize: 14),
-                          )
-                        ],
+                            Text(
+                              'Teams',
+                              style: GoogleFonts.syne(
+                                  color: Colors.white, fontSize: 14),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         width: 15,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:playpal/landingpage.dart';
+import 'package:playpal/location.dart';
 
 class MeetAndPlay extends StatefulWidget {
   const MeetAndPlay({Key? key}) : super(key: key);
@@ -215,33 +216,45 @@ class _MeetAndPlayState extends State<MeetAndPlay> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: width * .90,
-                  height: height * .08,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 192, 19, 106).withOpacity(0.5),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      )),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.locationPin,
-                        color: Colors.pink,
-                        size: 24,
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Select Location',
-                        style:
-                            GoogleFonts.syne(color: Colors.white, fontSize: 16),
-                      ),
-                    ],
+                GestureDetector(
+
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Location()),
+                    );
+                  },
+
+
+                  child: Container(
+                    width: width * .90,
+                    height: height * .08,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 192, 19, 106).withOpacity(0.5),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        )),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.locationPin,
+                          color: Colors.pink,
+                          size: 24,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'Select Location',
+                          style:
+                              GoogleFonts.syne(color: Colors.white, fontSize: 16),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
