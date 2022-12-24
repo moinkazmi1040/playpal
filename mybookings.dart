@@ -74,47 +74,55 @@ class _MyBookingsState extends State<MyBookings> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  width: width * .85,
-                  height: height * .09,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: width * .10,
-                        height: height * .05,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 58, 6, 88),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: Color.fromARGB(171, 131, 27, 79)
-                          //         .withOpacity(0.5),
-                          //     spreadRadius: 2,
-                          //     blurRadius: 2,
-                          //     offset: Offset(0, 2), // changes position of shadow
-                          //   ),
-                          // ],
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ), //BorderRadius.all
-                        ),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_sharp,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'Reservations',
-                        style: GoogleFonts.syne(
+                GestureDetector(
+
+                  onTap: (){
+
+                    Navigator.pop(context);
+
+                  },
+                  child: Container(
+                    width: width * .85,
+                    height: height * .09,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: width * .10,
+                          height: height * .05,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 6, 88),
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //     color: Color.fromARGB(171, 131, 27, 79)
+                            //         .withOpacity(0.5),
+                            //     spreadRadius: 2,
+                            //     blurRadius: 2,
+                            //     offset: Offset(0, 2), // changes position of shadow
+                            //   ),
+                            // ],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ), //BorderRadius.all
+                          ),
+                          child: Icon(
+                            Icons.arrow_back_ios_new_sharp,
                             color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                            size: 18,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          'Reservations',
+                          style: GoogleFonts.syne(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
