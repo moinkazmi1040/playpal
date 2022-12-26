@@ -2,28 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playpal/CoachDashBoard.dart';
-import 'package:playpal/mybookings.dart';
 import 'package:playpal/playerdashboard.dart';
+import 'profile_coach.dart';
 import 'inbox.dart';
 import 'payments.dart';
 
 import 'homepage.dart';
 import 'profile_player.dart';
 
-class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+class LandingPageTwo extends StatefulWidget {
+  const LandingPageTwo({Key? key}) : super(key: key);
 
   @override
-  State<LandingPage> createState() => _LandingPageState();
+  State<LandingPageTwo> createState() => _LandingPageTwoState();
 }
 
-class _LandingPageState extends State<LandingPage> {
+class _LandingPageTwoState extends State<LandingPageTwo> {
   int currentIndex = 0;
   final screens = [
-    PlayerDashboard(),
-    MyBookings(),
+    CoachDashboard(),
+    Inbox(),
     Payments(),
-    ProfilePlayer(),
+    ProfileCoach(),
 
   ];
   @override
@@ -66,12 +66,12 @@ class _LandingPageState extends State<LandingPage> {
               label: ('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.book),
-              label: ('Bookings'),
+              icon: Icon(FontAwesomeIcons.message),
+              label: ('Inbox'),
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.creditCard),
-              label: ('My Payments'),
+              label: ('Payments'),
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.user),

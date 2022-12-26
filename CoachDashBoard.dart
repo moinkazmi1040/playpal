@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playpal/coachgig.dart';
+import 'package:playpal/creategig.dart';
 
 class CoachDashboard extends StatefulWidget {
   const CoachDashboard({Key? key}) : super(key: key);
@@ -183,41 +184,52 @@ class _CoachDashboardState extends State<CoachDashboard> {
                           ],
                         ),
                       ),
-                      Container(
-                        width: width * .50,
-                        height: height * .06,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(129, 139, 28, 96),
+                      GestureDetector(
 
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ), //BorderRadius.all
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: width * .15,
-                              height: height * .04,
-                              decoration: BoxDecoration(
-                                  color: Colors.pink, shape: BoxShape.circle),
-                              child: Icon(
-                                FontAwesomeIcons.add,
-                                color: Colors.white,
-                                size: 18,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text('Teach Now',
-                                style: GoogleFonts.syne(
-                                  fontSize: 14,
+                        onTap: (){
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const CreateGig()),
+                          );
+
+                        },
+                        child: Container(
+                          width: width * .50,
+                          height: height * .06,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(129, 139, 28, 96),
+
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ), //BorderRadius.all
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: width * .15,
+                                height: height * .04,
+                                decoration: BoxDecoration(
+                                    color: Colors.pink, shape: BoxShape.circle),
+                                child: Icon(
+                                  FontAwesomeIcons.add,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                )),
-                          ],
+                                  size: 18,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text('Create Gig',
+                                  style: GoogleFonts.syne(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ],
